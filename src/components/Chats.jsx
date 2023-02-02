@@ -15,7 +15,7 @@ function Chats() {
 
   console.log(users);
   return (
-    <div className="flex-col overflow-y-scroll cursor-pointer h-full">
+    <div className="flex-col overflow-y-scroll cursor-pointer h-full   scrollbar-thin scrollbar-thumb-gray-200">
       <div>
        
         {users.map((user, i) => (
