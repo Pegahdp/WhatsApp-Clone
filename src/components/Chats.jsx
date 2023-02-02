@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Chat from "./Chat";
+import ChatHeader from "./ChatHeader";
 
 function Chats() {
   const [users, setUsers] = useState([]);
@@ -15,7 +16,8 @@ function Chats() {
 
   console.log(users);
   return (
-    <div className="flex-col overflow-y-scroll cursor-pointer h-full   scrollbar-thin scrollbar-thumb-gray-200">
+    <div className="flex-col overflow-y-scroll cursor-pointer h-screen w-full   scrollbar-thin scrollbar-thumb-gray-200">
+      <ChatHeader />
       <div>
        
         {users.map((user, i) => (

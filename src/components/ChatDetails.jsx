@@ -2,7 +2,7 @@ import Message from "./Message";
 import MessageEditor from "./MessageEditor";
 import { MessagesData } from "../data/msgdata";
 import { useState, useRef, useEffect } from "react";
-import MessageHeader from "./MessageHeader";
+import ChatDetailsHeader from "./ChatDetailsHeader";
 
 
 function ChatDetails() {
@@ -46,7 +46,7 @@ function ChatDetails() {
 
   return (
     <div className=" h-screen flex flex-col">
-      <MessageHeader />
+      <ChatDetailsHeader />
       <div className="bg-gray-100 w-full p-8 overflow-y-scroll  scrollbar-thin scrollbar-thumb-gray-200 ">
         {messages.map((msg, index) => (
           <Message key={index} text={msg.text} img={msg.img} sent={msg.sent} />
