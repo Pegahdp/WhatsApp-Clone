@@ -3,12 +3,12 @@ import "react-medium-image-zoom/dist/styles.css";
 function Message({ text, img, sent }) {
   return (
     <div
-    className={`flex justify-end rounded-md my-1 w-fit p-1 ${
+    className={`flex justify-center sm:justify-end rounded-md my-1 w-fit p-1 ${
       sent ? "bg-green-300 ml-auto" : "bg-white mr-auto"
      } `}
     >
       {img ? (
-        <div className="w-52">
+        <div className="w-40 sm:w-52">
           <Zoom>
             <img
               alt="/"
@@ -19,7 +19,7 @@ function Message({ text, img, sent }) {
         </div>
       ) : (
         <div
-          className="text-sm max-w-[400px]"
+          className="text-xs sm:text-sm max-w-[400px]"
           style={{ wordBreak: "break-word" }}
         >
           {text}

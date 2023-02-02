@@ -4,10 +4,10 @@ import { MessagesData } from "../data/msgdata";
 import { useState, useRef, useEffect } from "react";
 import ChatDetailsHeader from "./ChatDetailsHeader";
 
-
 function ChatDetails() {
   const [messages, setMessages] = useState(MessagesData);
   const inputRef = useRef(null);
+
 
   const addNewMessages = (msg) => {
     const newMessages = [...messages, msg];
@@ -26,7 +26,7 @@ function ChatDetails() {
 
   const handleUploadImg = () => {
     addNewMessages({
-      img: 'https://picsum.photos/id/0/367/267',
+      img: "https://picsum.photos/id/0/367/267",
       sent: true,
     });
   };
@@ -34,7 +34,6 @@ function ChatDetails() {
   const handleUploadEmoji = () => {
     inputRef.current.value += "😀";
     inputRef.current.focus();
-    
   };
 
   useEffect(() => {
@@ -46,20 +45,24 @@ function ChatDetails() {
     return () => document.removeEventListener("keydown", listener);
   });
 
+
+
   return (
-    <div className=" h-screen flex flex-col">
+    <div className="h-screen flex flex-col">
       <ChatDetailsHeader />
-      <div className="bg-gray-100 w-full p-8 overflow-y-scroll  scrollbar-thin scrollbar-thumb-gray-200 ">
+      <div className="flex-col h-screen justify-center bg-gray-100 w-full p-2 sm:p-8 overflow-y-scroll  scrollbar-thin scrollbar-thumb-gray-200 ">
         {messages.map((msg, index) => (
           <Message key={index} text={msg.text} img={msg.img} sent={msg.sent} />
         ))}
+       
       </div>
 
       <MessageEditor
         inputRef={inputRef}
         handleInputSubmit={handleInputSubmit}
-        handleUploadImg={handleUploadImg}   
-        handleUploadEmoji={handleUploadEmoji}   />
+        handleUploadImg={handleUploadImg}
+        handleUploadEmoji={handleUploadEmoji}
+      />
     </div>
   );
 }

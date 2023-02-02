@@ -4,7 +4,7 @@ import ProfileHeader from './ProfileHeader'
 
 function LeftSide() {
   return (
-    <div>
+    <div className='h-screen flex-col'>
         <ProfileHeader />
         <Chats />
     </div>
