@@ -1,4 +1,8 @@
-import React from "react";
+import { HiUserGroup } from "react-icons/hi";
+import { MdMessage } from "react-icons/md";
+import { IoSyncCircleOutline } from "react-icons/io5";
+import { FiMoreVertical } from "react-icons/fi";
+
 
 function ProfileHeader() {
   return (
@@ -9,9 +13,14 @@ function ProfileHeader() {
           alt="/"
           className="h-12 w-12 rounded-full"
         />
-        <p className="text-sm text-gray-900">Pegah Pasha</p>
+    
       </div>
-      <div className="flex items-center gap-3"></div>
+      <div className="flex items-center gap-6">
+        <HiUserGroup size={22} className="text-gray-600" />
+        <IoSyncCircleOutline size={22}className="text-gray-600" />
+        <MdMessage size={22} className="text-gray-600"/>
+        <FiMoreVertical size={22} className="text-gray-600"/>
+      </div>
     </div>
   );
 }

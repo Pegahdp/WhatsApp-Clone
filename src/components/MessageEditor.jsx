@@ -5,7 +5,7 @@ import { BiHappy } from "react-icons/bi";
 function MessageEditor({ inputRef, handleInputSubmit, handleUploadImg, handleUploadEmoji}) {
   return (
     <div className="flex items-center  bg-gray-300 w-full h-24 gap-3 py-2">
-      <button>
+      <button className="outline-0">
         <AiOutlinePaperClip
           size={30}
           onClick={handleUploadImg}
@@ -15,7 +15,7 @@ function MessageEditor({ inputRef, handleInputSubmit, handleUploadImg, handleUpl
       <button onClick={handleUploadEmoji}>
         <BiHappy
           size={26}
-          className="text-gray-500 mr-2 hover:text-blue-800  "
+          className="text-gray-500 mr-2 hover:text-blue-800 outline-0 "
         />
       </button>
 

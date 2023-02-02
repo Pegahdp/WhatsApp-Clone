@@ -9,8 +9,8 @@ function MessageHeader() {
       <p className="text-sm text-gray-900">Janet Weaver</p>
         </div>
         <div className="flex items-center gap-3">
-        <AiOutlineSearch size={20}/>
-        <FiMoreVertical size={20} />
+        <AiOutlineSearch size={22} className="text-gray-600"/>
+        <FiMoreVertical size={22}  className="text-gray-600"/>
         </div>
     </div>
   );

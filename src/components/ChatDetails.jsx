@@ -33,6 +33,8 @@ function ChatDetails() {
 
   const handleUploadEmoji = () => {
     inputRef.current.value += "😀";
+    inputRef.current.focus();
+    
   };
 
   useEffect(() => {
