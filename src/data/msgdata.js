@@ -1,6 +1,6 @@
 export const MessagesData = [
     {
-      text: "Hey wassupp bro!",
+      text: "Hey there!",
       sent: true,
     },
     {
@@ -8,7 +8,7 @@ export const MessagesData = [
       sent: true,
     },
     {
-      text: "Keep it up! 👍👍👍",
+      text: "Sup?? 👍👍👍",
       sent: true,
     },
     {
@@ -20,27 +20,27 @@ export const MessagesData = [
       sent: false,
     },
     {
-      text: "I will! what's your Github?",
+      text: "Are you enjoying this Whatsapp msg?",
       sent: true,
     },
     {
-      text: "AlejoG10",
+      text: "Yeah that's amaziiiing",
       sent: false,
     },
     {
-      text: "Hey There",
+      text: "Keep Going.....",
       sent: false,
     },
     {
-      text: "And your YouTube channel?",
+      text: "What is your weekend plan?",
       sent: true,
     },
     {
-      text: "Coding Spot",
+      text: "Coding coding and codiiiing",
       sent: false,
     },
     {
-      text: "https://www.youtube.com/channel/UCLqXQLK6zKZg0trhanjAkkQ",
+      text: "Stil coding......",
       sent: false,
     },
     {
@@ -48,11 +48,11 @@ export const MessagesData = [
       sent: false,
     },
     {
-      text: "Niceeee channel! 🔥💯",
+      text: "Goodluck then! 🔥💯",
       sent: true,
     },
     {
-      text: "I will see all of your videos 😉",
+      text: "Thanks Dear, sea yaaaa 😉",
       sent: true,
     },
   ];
