@@ -40,7 +40,7 @@ export const MessagesData = [
       sent: false,
     },
     {
-      text: "Stil coding......",
+      text: "Still coding......",
       sent: false,
     },
     {
