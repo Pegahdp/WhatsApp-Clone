@@ -30,6 +30,10 @@ function ChatDetails() {
     });
   };
 
+  const handleUploadEmoji = () => {
+    inputRef.current.value += "😀";
+  };
+
   useEffect(() => {
     const listener = (e) => {
       if (e.code === "Enter") handleInputSubmit();
@@ -50,7 +54,8 @@ function ChatDetails() {
       <MessageEditor
         inputRef={inputRef}
         handleInputSubmit={handleInputSubmit}
-        handleUploadImg={handleUploadImg}      />
+        handleUploadImg={handleUploadImg}   
+        handleUploadEmoji={handleUploadEmoji}   />
     </div>
   );
 }
