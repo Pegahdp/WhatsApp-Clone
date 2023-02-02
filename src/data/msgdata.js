@@ -44,7 +44,7 @@ export const MessagesData = [
       sent: false,
     },
     {
-      img: "https://picsum.photos/id/237/200/300",
+      img: "https://picsum.photos/id/237/400",
       sent: false,
     },
     {
