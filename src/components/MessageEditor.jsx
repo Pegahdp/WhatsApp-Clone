@@ -2,12 +2,13 @@ import { AiOutlinePaperClip } from "react-icons/ai";
 import { MdSend } from "react-icons/md";
 import { BiHappy } from "react-icons/bi";
 
-function MessageEditor({ inputRef, handleInputSubmit }) {
+function MessageEditor({ inputRef, handleInputSubmit, handleUploadImg }) {
   return (
     <div className="flex items-center  bg-gray-300 w-full h-24 gap-3 py-2">
       <button>
         <AiOutlinePaperClip
           size={30}
+          onClick={handleUploadImg}
           className=" text-gray-500 ml-2 font-bold  hover:text-blue-800 "
         />
       </button>

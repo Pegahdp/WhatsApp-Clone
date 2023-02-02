@@ -3,6 +3,7 @@ import MessageEditor from "./MessageEditor";
 import { MessagesData } from "../data/msgdata";
 import { useState, useRef, useEffect } from "react";
 
+
 function ChatDetails() {
   const [messages, setMessages] = useState(MessagesData);
   const inputRef = useRef(null);
@@ -20,6 +21,13 @@ function ChatDetails() {
       });
       inputRef.current.value = "";
     }
+  };
+
+  const handleUploadImg = () => {
+    addNewMessages({
+      img: 'https://picsum.photos/id/0/367/267',
+      sent: true,
+    });
   };
 
   useEffect(() => {
@@ -42,7 +50,7 @@ function ChatDetails() {
       <MessageEditor
         inputRef={inputRef}
         handleInputSubmit={handleInputSubmit}
-      />
+        handleUploadImg={handleUploadImg}      />
     </div>
   );
 }

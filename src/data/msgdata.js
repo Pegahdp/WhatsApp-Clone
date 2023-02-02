@@ -20,11 +20,11 @@ export const MessagesData = [
       sent: false,
     },
     {
-      text: "Are you enjoying this Whatsapp msg?",
+      text: "Are you enjoying this Whatsapp msg? isn't is so coo? please tell me what do you think",
       sent: true,
     },
     {
-      text: "Yeah that's amaziiiing",
+      text: "Yeah that's amaziiiing, Well done Pegah, how did you do that? is it with React",
       sent: false,
     },
     {
