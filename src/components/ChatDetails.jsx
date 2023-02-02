@@ -1,7 +1,7 @@
 import Message from "./Message";
 import MessageEditor from "./MessageEditor";
 import { MessagesData } from "../data/msgdata";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 function ChatDetails() {
   const [messages, setMessages] = useState(MessagesData);
@@ -21,6 +21,16 @@ function ChatDetails() {
       inputRef.current.value = "";
     }
   };
+
+  useEffect(() => {
+    const listener = (e) => {
+      if (e.code === "Enter") handleInputSubmit();
+    };
+
+    document.addEventListener("keydown", listener);
+    return () => document.removeEventListener("keydown", listener);
+  });
+
   return (
     <div className=" h-screen flex flex-col">
       <div className="bg-gray-100 w-full p-8 overflow-y-scroll  scrollbar-thin scrollbar-thumb-gray-200 ">
