@@ -9,7 +9,7 @@ function MessageEditor({
   handleUploadEmoji,
 }) {
   return (
-    <div className="flex items-center  bg-gray-300 w-full h-16 md:h-24 gap-1 sm:gap-3 py-2">
+    <div className="flex items-center  bg-gray-200 w-full h-16 md:h-24 gap-1 sm:gap-3 py-2">
       <button className="outline-0">
         <AiOutlinePaperClip
           onClick={handleUploadImg}
