@@ -6,7 +6,7 @@ function Whatsapp() {
   return (
     <div>
       <div className="w-screen h-screen overflow-hidden">
-        <div className="flex justify-start  items-center h-screen">
+        <div className="flex overflow-hidden items-center h-screen">
           <div className="basis-1/3 h-screen">
             <LeftSide />
           </div>

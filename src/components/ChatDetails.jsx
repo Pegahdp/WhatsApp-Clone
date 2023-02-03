@@ -7,6 +7,7 @@ import ChatDetailsHeader from "./ChatDetailsHeader";
 function ChatDetails() {
   const [messages, setMessages] = useState(MessagesData);
   const inputRef = useRef(null);
+  const bottomRef = useRef(null);
 
 
   const addNewMessages = (msg) => {
@@ -46,6 +47,12 @@ function ChatDetails() {
   });
 
 
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({
+      behavior: "smooth",
+      
+    });
+  }, [messages]);
 
   return (
     <div className="h-screen flex flex-col">
@@ -54,7 +61,8 @@ function ChatDetails() {
         {messages.map((msg, index) => (
           <Message key={index} text={msg.text} img={msg.img} sent={msg.sent} />
         ))}
-       
+     <div ref={bottomRef} />
+
       </div>
 
       <MessageEditor

@@ -3,7 +3,7 @@ import Whatsapp from "./pages/Whatsapp";
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
     <Whatsapp />
     </div>
   );
