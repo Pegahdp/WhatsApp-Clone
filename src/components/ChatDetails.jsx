@@ -53,6 +53,11 @@ function ChatDetails() {
     });
   }, [messages]);
 
+
+
+
+
+
   return (
     <div className="h-screen flex flex-col">
       <ChatDetailsHeader />
