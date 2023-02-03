@@ -50,7 +50,6 @@ function ChatDetails() {
   useEffect(() => {
     bottomRef.current?.scrollIntoView({
       behavior: "smooth",
-      
     });
   }, [messages]);
 
