@@ -47,12 +47,5 @@ export const MessagesData = [
       img: "https://picsum.photos/id/237/400",
       sent: false,
     },
-    {
-      text: "Goodluck then! 🔥💯",
-      sent: true,
-    },
-    {
-      text: "Thanks Dear, sea yaaaa 😉",
-      sent: true,
-    },
+   
   ];

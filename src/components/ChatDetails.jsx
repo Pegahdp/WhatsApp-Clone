@@ -9,7 +9,6 @@ function ChatDetails() {
   const inputRef = useRef(null);
   const bottomRef = useRef(null);
 
-
   const addNewMessages = (msg) => {
     const newMessages = [...messages, msg];
     setMessages(newMessages);
@@ -46,28 +45,36 @@ function ChatDetails() {
     return () => document.removeEventListener("keydown", listener);
   });
 
-
   useEffect(() => {
     bottomRef.current?.scrollIntoView({
       behavior: "smooth",
     });
   }, [messages]);
 
+  const messagesEndRef = useRef(null);
+  const scrollToBottom = () => {
+    messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
+  };
 
-
-
-
+  useEffect(scrollToBottom, []);
 
   return (
     <div className="h-screen flex flex-col">
       <ChatDetailsHeader />
-      <div className="flex-col h-screen justify-center bg-gray-100 w-full p-2 sm:p-8 overflow-y-scroll  scrollbar-thin scrollbar-thumb-gray-200 ">
-        {messages.map((msg, index) => (
-          <Message key={index} text={msg.text} img={msg.img} sent={msg.sent} />
-        ))}
-     <div ref={bottomRef} />
-
-      </div>
+   <div ref={messagesEndRef} style={{overflow: "auto"}} className=" bg-gray-100 p-2 sm:p-8 w-full ">
+        <div  className="flex-col h-screen justify-center bg-gray-100 w-full   scrollbar-thumb-gray-200 ">
+          {messages.map((msg, index) => (
+            <Message
+              key={index}
+              text={msg.text}
+              img={msg.img}
+              sent={msg.sent}
+            />
+          ))}
+          <div ref={bottomRef} className="pb-8" />
+        </div>
+        </div>
+     
 
       <MessageEditor
         inputRef={inputRef}
