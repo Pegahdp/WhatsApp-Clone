@@ -8,6 +8,7 @@ function ChatDetails() {
   const [messages, setMessages] = useState(MessagesData);
   const inputRef = useRef(null);
   const bottomRef = useRef(null);
+  const messagesEndRef = useRef(null);
 
   const addNewMessages = (msg) => {
     const newMessages = [...messages, msg];
@@ -22,7 +23,16 @@ function ChatDetails() {
       });
       inputRef.current.value = "";
     }
+    
   };
+
+  useEffect(() => {
+    const timeoutFunction =setInterval(()=>{
+      const newMessages = [...messages, { text: 'Response...', sent: false }];
+      setMessages(newMessages);
+    }, 15000)
+    return () => clearInterval(timeoutFunction);
+  },[ messages])
 
   const handleUploadImg = () => {
     addNewMessages({
@@ -30,6 +40,8 @@ function ChatDetails() {
       sent: true,
     });
   };
+
+
 
   const handleUploadEmoji = () => {
     inputRef.current.value += "😀";
@@ -51,7 +63,6 @@ function ChatDetails() {
     });
   }, [messages]);
 
-  const messagesEndRef = useRef(null);
   const scrollToBottom = () => {
     messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
   };
@@ -61,8 +72,12 @@ function ChatDetails() {
   return (
     <div className="h-screen flex flex-col">
       <ChatDetailsHeader />
-   <div ref={messagesEndRef} style={{overflow: "auto"}} className=" bg-gray-100 p-2 sm:p-8 w-full ">
-        <div  className="flex-col h-screen justify-center bg-gray-100 w-full   scrollbar-thumb-gray-200 ">
+      <div
+        ref={messagesEndRef}
+        style={{ overflow: "auto" }}
+        className=" bg-gray-100 p-2 sm:p-8 w-full "
+      >
+        <div className="flex-col h-screen justify-center bg-gray-100 w-full   scrollbar-thumb-gray-200 ">
           {messages.map((msg, index) => (
             <Message
               key={index}
@@ -73,8 +88,7 @@ function ChatDetails() {
           ))}
           <div ref={bottomRef} className="pb-8" />
         </div>
-        </div>
-     
+      </div>
 
       <MessageEditor
         inputRef={inputRef}

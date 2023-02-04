@@ -13,6 +13,7 @@
     "react-icons": "^4.7.1",
     "react-infinite-scroll-component": "^6.1.0",
     "react-medium-image-zoom": "^5.1.2",
+    "react-native-gifted-chat": "^1.1.1",
     "react-scripts": "5.0.1",
     "react-scroll-to-bottom": "^4.2.0",
     "tailwind-scrollbar": "^2.1.0",
