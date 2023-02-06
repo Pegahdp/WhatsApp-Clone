@@ -11,7 +11,7 @@ function ChatDetails() {
   const bottomRef = useRef(null);
   const messagesEndRef = useRef(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [imgUrl, setimgUrl] = useState('');
+  const [imgUrl, setimgUrl] = useState("");
 
   const addNewMessages = (msg) => {
     const newMessages = [...messages, msg];
@@ -30,9 +30,12 @@ function ChatDetails() {
 
   useEffect(() => {
     const timeoutFunction = setInterval(() => {
-      const newMessages = [...messages, { text: "Response...", sent: false }];
+      const newMessages = [
+        ...messages,
+        { text: "This is an auto response to your message", sent: false },
+      ];
       setMessages(newMessages);
-    }, 10000);
+    }, 15000);
     return () => clearInterval(timeoutFunction);
   }, [messages]);
 
@@ -41,8 +44,8 @@ function ChatDetails() {
       img: imgUrl,
       sent: true,
     });
-    setIsModalOpen(false)
-    setimgUrl('')
+    setIsModalOpen(false);
+    setimgUrl("");
   };
 
   const handleUploadEmoji = () => {
@@ -110,11 +113,14 @@ function ChatDetails() {
               <input
                 type="url"
                 value={imgUrl}
-                onChange={(e) =>setimgUrl(e.target.value)}
+                onChange={(e) => setimgUrl(e.target.value)}
                 placeholder="Enter Image Url"
                 className="border-2 rounded-md w-[300px] p-2 outline-none text-sm"
               />
-              <button onClick={handleUploadImg}  className="border rounded-md bg-green-400 text-white text-sm py-2">
+              <button
+                onClick={handleUploadImg}
+                className="border rounded-md bg-green-400 text-white text-sm py-2"
+              >
                 Upload
               </button>
             </form>
