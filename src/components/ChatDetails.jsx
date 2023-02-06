@@ -3,12 +3,15 @@ import MessageEditor from "./MessageEditor";
 import { MessagesData } from "../data/msgdata";
 import { useState, useRef, useEffect } from "react";
 import ChatDetailsHeader from "./ChatDetailsHeader";
+import { GrFormClose } from "react-icons/gr";
 
 function ChatDetails() {
   const [messages, setMessages] = useState(MessagesData);
   const inputRef = useRef(null);
   const bottomRef = useRef(null);
   const messagesEndRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [imgUrl, setimgUrl] = useState('');
 
   const addNewMessages = (msg) => {
     const newMessages = [...messages, msg];
@@ -23,25 +26,24 @@ function ChatDetails() {
       });
       inputRef.current.value = "";
     }
-    
   };
 
   useEffect(() => {
-    const timeoutFunction =setInterval(()=>{
-      const newMessages = [...messages, { text: 'Response...', sent: false }];
+    const timeoutFunction = setInterval(() => {
+      const newMessages = [...messages, { text: "Response...", sent: false }];
       setMessages(newMessages);
-    }, 15000)
+    }, 10000);
     return () => clearInterval(timeoutFunction);
-  },[ messages])
+  }, [messages]);
 
   const handleUploadImg = () => {
     addNewMessages({
-      img: "https://picsum.photos/id/0/367/267",
+      img: imgUrl,
       sent: true,
     });
+    setIsModalOpen(false)
+    setimgUrl('')
   };
-
-
 
   const handleUploadEmoji = () => {
     inputRef.current.value += "😀";
@@ -69,6 +71,10 @@ function ChatDetails() {
 
   useEffect(scrollToBottom, []);
 
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
   return (
     <div className="h-screen flex flex-col">
       <ChatDetailsHeader />
@@ -93,9 +99,31 @@ function ChatDetails() {
       <MessageEditor
         inputRef={inputRef}
         handleInputSubmit={handleInputSubmit}
-        handleUploadImg={handleUploadImg}
         handleUploadEmoji={handleUploadEmoji}
+        handleOpenModal={handleOpenModal}
       />
+
+      {isModalOpen && (
+        <div className="fixed top-0 bottom-0 left-0 right-0 bg-gray-100 flex items-center justify-center">
+          <div className="bg-white rounded-md shadow-lg p-4 z-100 opacity-100 relative ">
+            <form className="flex flex-col gap-2 mt-5">
+              <input
+                type="url"
+                value={imgUrl}
+                onChange={(e) =>setimgUrl(e.target.value)}
+                placeholder="Enter Image Url"
+                className="border-2 rounded-md w-[300px] p-2 outline-none text-sm"
+              />
+              <button onClick={handleUploadImg}  className="border rounded-md bg-green-400 text-white text-sm py-2">
+                Upload
+              </button>
+            </form>
+            <button onClick={() => setIsModalOpen(false)}>
+              <GrFormClose size={24} className=" absolute top-2 right-2" />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

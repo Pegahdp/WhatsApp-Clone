@@ -7,15 +7,18 @@ function MessageEditor({
   handleInputSubmit,
   handleUploadImg,
   handleUploadEmoji,
+  handleOpenModal
 }) {
   return (
     <div className="flex items-center  bg-gray-300 w-full h-16 md:h-24 gap-1 sm:gap-3 py-2">
       <button className="outline-0">
         <AiOutlinePaperClip
-          onClick={handleUploadImg}
+          onClick={handleOpenModal}
           className=" text-gray-500 ml-2 font-bold  hover:text-blue-800 h-4 w-4 sm:w-6 sm:h-6"
         />
       </button>
+
+      
       <button onClick={handleUploadEmoji}>
         <BiHappy className="text-gray-500 mr-2 hover:text-blue-800 outline-0  h-4 w-4  sm:w-6 sm:h-6" />
       </button>
