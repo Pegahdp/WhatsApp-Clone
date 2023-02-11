@@ -17,3 +17,6 @@ This WhatsApp clone react-app has the following features:
 The most challenging part was Using GiftedChat library and it took almost three days to implement and it didn't work at last.
 
 The feature which I like the most to add in the future is benefiting from some AI chatbots APIs like ChatGPT to generate responses to sending messages
+
+
+![image](https://user-images.githubusercontent.com/94760463/218232277-2fbc29c8-24c4-4444-8aa6-56072ca1c040.png)
