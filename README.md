@@ -1,4 +1,4 @@
-This WhatsApp clone react-app have the following features:
+This WhatsApp clone react-app has the following features:
 
 -More than 80% UI similarity to the real WhatsApp web app 
 -Simulate sending messages including text and images (through inserting url)
