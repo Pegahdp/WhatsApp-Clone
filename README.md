@@ -19,4 +19,5 @@ The most challenging part was Using GiftedChat library and it took almost three 
 The feature which I like the most to add in the future is benefiting from some AI chatbots APIs like ChatGPT to generate responses to sending messages
 
 
-![image](https://user-images.githubusercontent.com/94760463/218232277-2fbc29c8-24c4-4444-8aa6-56072ca1c040.png)
+![image](https://user-images.githubusercontent.com/94760463/218232337-db9a743d-df04-4482-ba2a-fb571d8e738d.png)
+
